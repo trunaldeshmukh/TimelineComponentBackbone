@@ -56,28 +56,6 @@
     <!-- Modal -->
     <div class="container">
 
-        <div class="container modal fade" id="audit_Modal" role="dialog" tabindex="-1" style="display: block;z-index:9999;width:fit-content;">
-            <div class="modal-dialog  modal-center" style="text-align: center; width: auto;">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p id="modal-audit-type">Audit Type</p>
-                        <p id="modal-audit-comment">Audit Comment</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
         <div class="container modal fade" id="audit_FullModal" role="dialog" tabindex="-1">
             <div class="modal-dialog  modal-center" style="text-align: center; width: auto;">
 
@@ -120,8 +98,7 @@
             <div class="timeline-dot" style="background-color:<%= timeline_dot_color %>" >
                 <%= audit_id %>  <i class="<%= timeline_icon_class %>" aria-hidden="true"></i>
             </div>
-            <div class="timeline-info" style="margin-bottom:10px;" data-toggle="modal" data-target="#audit_Modal" data-auditid="<%= audit_id %>" data-auditdate="<%= audit_date %>"
-                data-audittype="<%= audit_event %>" data-auditcomment="<%= audit_description %>">
+            <div class="timeline-info" style="margin-bottom:10px;">
                 <time datetime="DD MMM YYYY hh:mm A"> <%= audit_long_date %></time>
             </div>
              <div class="timeline-content"> 
@@ -129,11 +106,12 @@
                     <div class="widget-body" style="padding:0px;">
                             <div class="testimonial testimonial-top <%= timeline_class == 'timeline-reverse' ?  '' : 'testimonial-reverse' %>">
                             <ul class="testimonial-ul row">
-                                    <li class="testimonial-item" style="padding:0px;text-align:<%= timeline_class == 'timeline-reverse' ?  'start' : 'end' %>;">
-                                <span class="testimonial-author" style="padding:0px;margin:0px;">
-                                        <%= audit_user %>
-                                </span>
-                                <span class="testimonial-company" style="margin:0px;"> <%= audit_event %></span>
+                                <li class="testimonial-item" style="padding:0px;text-align:<%= timeline_class == 'timeline-reverse' ?  'start' : 'end' %>;">
+                                    <span class="testimonial-company" style="margin:0px;"> <%= audit_event %></span>
+                                    <span class="testimonial-author" style="padding:0px;margin:0px;">
+                                            <%= audit_user %>
+                                    </span>
+                                
                                 <div class="testimonial-content">
                                     <p><%= audit_description %></p>
                                     <p>Nam nec ante. Sed lacinia, urna non tincidunt mattis,

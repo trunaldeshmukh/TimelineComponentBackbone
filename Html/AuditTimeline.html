@@ -9,8 +9,8 @@
     <meta name="author" content="">
     <title>Audit Trail</title>
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../lib/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="../lib/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../lib/css/bootstrap-extend.min.css" media="screen">
     <link rel="stylesheet" href="../lib/css/material-design/material-design.min.css">
     <link rel="stylesheet" href="../lib/css/site.min.css">
     <style>
@@ -24,13 +24,10 @@
 <body>
     <div class="container">
         <button class="btn btn-icon" style="float: right;" data-toggle="modal" data-target="#audit_FullModal">
-            Show Timeline
+                <i class="icon md-menu" aria-hidden="true"></i>
         </button>
     </div>
     <div class="container">
-        <button class="btn btn-icon" style="float: right;" data-toggle="modal" data-target="#audit_FullModal">
-            Show Timeline
-        </button>
         <ul class=" timeline timeline-simple" id="container_id">
 
 
@@ -94,8 +91,10 @@
 
 
     </div>
+
+     <!-- Modal -->
     <div class="container">
-        <!-- Modal -->
+       
         <div class="container modal fade" id="audit_Modal" role="dialog" tabindex="-1" style="display: block;z-index:9999;width:fit-content;">
             <div class="modal-dialog  modal-center" style="text-align: center; width: auto;">
 
@@ -141,12 +140,11 @@
 
     <script type="text/template" id="audit_template">
        <li class="timeline-item <%= timeline_class %>">
-            <div class="timeline-dot" style="background-color:<%= timeline_dot_color %>" 
-                data-placement="right" data-toggle="tooltip" data-trigger="hover" title="<%= audit_date %>"></div>
-            <div class="timeline-content">
+            <div class="timeline-dot" style="background-color:<%= timeline_dot_color %>"  ></div>
+            <div class="timeline-content"   data-placement="right" data-toggle="tooltip" data-trigger="hover" title="<%= audit_date %>">
               <div class="widget widget-article widget-shadow">
                     <div class="widget-body" style="padding:0px 20px;background: #f3f4f5;float:<%= timeline_class == 'timeline-reverse' ?  'left' : 'right' %>;">
-                    <!-- <div class="widget-body" style="padding:0px 20px;background: #f3f4f5;"> -->
+                     <!--<div class="widget-body" style="padding:0px 20px;background: #f3f4f5;"> -->
                         <p><%= audit_event %></p>
                     </div>
               </div>
@@ -157,7 +155,7 @@
     <script type="text/template" id="audit_fulltemplate">
         <li class=" timeline-item <%= timeline_class %>" >
             <div class="timeline-dot" style="background-color:<%= timeline_dot_color %>" >
-                <%= audit_id %>
+                <%= audit_id %>  <i class="<%= timeline_icon_class %>" aria-hidden="true"></i>
             </div>
             <div class="timeline-info" style="margin-bottom:10px;" data-toggle="modal" data-target="#audit_Modal" data-auditid="<%= audit_id %>" data-auditdate="<%= audit_date %>"
                 data-audittype="<%= audit_event %>" data-auditcomment="<%= audit_description %>">
@@ -168,8 +166,8 @@
                     <div class="widget-body" style="padding:0px;">
                             <div style="max-width:300px !important;" class="testimonial testimonial-top <%= timeline_class == 'timeline-reverse' ?  '' : 'testimonial-reverse' %>">
                             <ul class="testimonial-ul row">
-                                <li class="testimonial-item" style="padding:0px;">
-                                <span class="testimonial-author" style="margin:0px;">
+                                <li class="testimonial-item" style="padding:0px;text-align:<%= timeline_class == 'timeline-reverse' ?  'start' : 'end' %>;;">
+                                <span class="testimonial-author" style="margin:0px;text-align:<%= timeline_class == 'timeline-reverse' ?  'start' : 'end' %>;;">
                                         <%= audit_user %>
                                 </span>
                                 <span class="testimonial-company" style="margin:0px;"> <%= audit_event %></span>
@@ -194,16 +192,20 @@
     <script type="text/javascript" src="../lib/js/bootstrap.js"></script>
     <!-- <script type="text/javascript" src="../lib/Timeline/babel-external-helpers.js"></script> -->
     <script type="text/javascript" src="../lib/js/jquery.appear.js"></script>
-    <script type="text/javascript" src="../lib/js/core.js"></script>
-    <script type="text/javascript" src="../lib/js/config-colors.js"></script>
-    <!-- Plugins -->
-    <!-- Scripts -->
-    <script type="text/javascript" src="../lib/js/site.js"></script>
-    <script type="text/javascript" src="../lib/js/timeline.js"></script>
-
     <script src="../lib/js/moment.min.js" type="text/javascript"></script>
     <script src="../lib/js/underscore.js" type="text/javascript"></script>
     <script src="../lib/js/backbone.js" type="text/javascript"></script>
+  
+  
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="../lib/js/core.js"></script>
+    <script type="text/javascript" src="../lib/js/config-colors.js"></script>
+    <script type="text/javascript" src="../lib/js/site.js"></script>
+    <script type="text/javascript" src="../lib/js/timeline.js"></script>
+    
+
+
 
     <!-- custom js start-->
     <script src="../lib/js/modal.js" type="text/javascript"></script>

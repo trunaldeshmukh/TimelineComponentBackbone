@@ -22,79 +22,40 @@
 </head>
 
 <body>
-    <div class="container">
-        <button class="btn btn-icon" style="float: right;" data-toggle="modal" data-target="#audit_FullModal">
-                <i class="icon md-menu" aria-hidden="true"></i>
-        </button>
+
+    <div id="div1" style=" width: 50%; height: 50%; float: left;">
     </div>
-    <div class="container">
-        <ul class=" timeline timeline-simple" id="container_id">
-
-
-            <!-- <li class="timeline-item">
-                <div class="timeline-dot bg-orange-500">
-                    <i class="md-quote"></i>
-                </div>
-                <div class="timeline-info">
-                    <time datetime="2016-05-08">9 Days ago</time>
-                </div>
-                <div class="timeline-content">
-                    <div class="widget widget-article widget-shadow">
-
-                        <div class="widget-body">
-                            <h3 class="widget-title">Lorem Ipsum Dolor</h3>
-                            <p class="widget-metas">
-                                <span class="widget-time">MAY 15, 2016</span>
-                            </p>
-                            <p>Novum formidines congressus atomorum nam permulta alterum delectatio gaudeat statim. Necessariae
-                                dicturam perspexit utrum modo amicitiae malum summumque, multis ante iudicia desiderat, civitas
-                                iudicare attingere, amori perpaulum mediocrium, dicere notae litteras plusque appareat, remotis
-                                fama futurove quandam assentiar integre poenis. </p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-
-            <li class="timeline-item timeline-reverse">
-                <div class="timeline-dot bg-green-500">
-                    <i class="icon md-file" aria-hidden="true"></i>
-                </div>
-                <div class="timeline-info">
-                    <time datetime="2016-05-15">2 Days ago</time>
-                </div>
-                <div class="timeline-content">
-                    <div class="widget widget-article widget-shadow">
-
-                        <div class="widget-body">
-                            <h3 class="widget-title">Lorem Ipsum Dolor</h3>
-                            <p class="widget-metas">
-                                <span class="widget-time">MAY 15, 2016</span>
-                            </p>
-                            <p>Novum formidines congressus atomorum nam permulta alterum delectatio gaudeat statim. Necessariae
-                                dicturam perspexit utrum modo amicitiae malum summumque, multis ante iudicia desiderat, civitas
-                                iudicare attingere, amori perpaulum mediocrium, dicere notae litteras plusque appareat, remotis
-                                fama futurove quandam assentiar integre poenis. </p>
-                        </div>
-                    </div>
-                </div>
-            </li> -->
-
-        </ul>
-
-        <div id="hidden_modal" style="display: none;">
-            <ul class="timeline timeline-icon" id="container_id_full">
+    <div id="div2" style=" width: 50%; height: 50%; float: left;">
+    </div>
+    <div id="div3" style=" width: 80%; height: 50%; float: left;">
+    </div>
+    <div id="div4" style=" width: 20%; height: 50%; float: left;overflow: auto;box-shadow: 2px 2px 10px 5px #C7C7C7;">
+        <div class="container">
+            <button class="btn btn-icon" style="float: right;" data-toggle="modal" data-target="#audit_FullModal">
+                <i class="icon md-menu" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="container">
+            <ul class=" timeline timeline-simple" id="container_id">
 
             </ul>
+
+            <div id="hidden_modal" style="display: none;">
+                <ul class="timeline timeline-icon" id="container_id_full">
+
+                </ul>
+            </div>
+
+
+
         </div>
-
-
-
     </div>
 
-     <!-- Modal -->
+
+
+    <!-- Modal -->
     <div class="container">
-       
+
         <div class="container modal fade" id="audit_Modal" role="dialog" tabindex="-1" style="display: block;z-index:9999;width:fit-content;">
             <div class="modal-dialog  modal-center" style="text-align: center; width: auto;">
 
@@ -143,11 +104,10 @@
             <div class="timeline-dot" style="background-color:<%= timeline_dot_color %>"  ></div>
             <div class="timeline-info" style="margin-bottom:3px;">
                     <time datetime="DD MMM YYYY"> <%= audit_short_date %></time>
-             </div>
+                </div>
             <div class="timeline-content"   data-placement="right" data-toggle="tooltip" data-trigger="hover" title="<%= audit_date %>">
-              <div class="widget widget-article widget-shadow">
-                    <div class="widget-body" style="padding:0px 20px;background: #f3f4f5;float:<%= timeline_class == 'timeline-reverse' ?  'left' : 'right' %>;">
-                     <!--<div class="widget-body" style="padding:0px 20px;background: #f3f4f5;"> -->
+              <div class="widget widget-article ">
+                    <div class="widget-body" style="padding:0px; text-align:center;">
                         <p><%= audit_event %></p>
                     </div>
               </div>
@@ -162,15 +122,15 @@
             </div>
             <div class="timeline-info" style="margin-bottom:10px;" data-toggle="modal" data-target="#audit_Modal" data-auditid="<%= audit_id %>" data-auditdate="<%= audit_date %>"
                 data-audittype="<%= audit_event %>" data-auditcomment="<%= audit_description %>">
-                <time datetime="2016-05-15"> <%= audit_date %></time>
+                <time datetime="DD MMM YYYY hh:mm A"> <%= audit_long_date %></time>
             </div>
-             <div class="timeline-content" style="display: flex; justify-content: <%= timeline_class == 'timeline-reverse' ?  'flex-start' : 'flex-end' %>;"> 
-                <div class="widget widget-article widget-shadow">
+             <div class="timeline-content"> 
+                <div class="widget widget-article ">
                     <div class="widget-body" style="padding:0px;">
-                            <div style="max-width:300px !important;" class="testimonial testimonial-top <%= timeline_class == 'timeline-reverse' ?  '' : 'testimonial-reverse' %>">
+                            <div class="testimonial testimonial-top <%= timeline_class == 'timeline-reverse' ?  '' : 'testimonial-reverse' %>">
                             <ul class="testimonial-ul row">
-                                <li class="testimonial-item" style="padding:0px;text-align:<%= timeline_class == 'timeline-reverse' ?  'start' : 'end' %>;;">
-                                <span class="testimonial-author" style="margin:0px;text-align:<%= timeline_class == 'timeline-reverse' ?  'start' : 'end' %>;;">
+                                    <li class="testimonial-item" style="padding:0px;text-align:<%= timeline_class == 'timeline-reverse' ?  'start' : 'end' %>;">
+                                <span class="testimonial-author" style="padding:0px;margin:0px;">
                                         <%= audit_user %>
                                 </span>
                                 <span class="testimonial-company" style="margin:0px;"> <%= audit_event %></span>
@@ -198,15 +158,15 @@
     <script src="../lib/js/moment.min.js" type="text/javascript"></script>
     <script src="../lib/js/underscore.js" type="text/javascript"></script>
     <script src="../lib/js/backbone.js" type="text/javascript"></script>
-  
-  
+
+
 
     <!-- Scripts -->
     <script type="text/javascript" src="../lib/js/core.js"></script>
     <script type="text/javascript" src="../lib/js/config-colors.js"></script>
     <script type="text/javascript" src="../lib/js/site.js"></script>
     <script type="text/javascript" src="../lib/js/timeline.js"></script>
-    
+
 
 
 

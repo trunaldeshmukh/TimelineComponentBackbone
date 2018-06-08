@@ -16,6 +16,9 @@ $(function () {
         },
         addOne: function (audit) {
             var date = moment(audit.toJSON().audit_date).format("MMM YYYY");
+            audit.set('audit_short_date',moment(audit.toJSON().audit_date).format("DD MMM YYYY"));
+            audit.set('audit_long_date',moment(audit.toJSON().audit_date).format("DD MMM YYYY hh:mm A"));
+
             if (app.Variables.current_month_year !== date) {
                 app.Variables.current_month_year = date;
                 this.$el.append('<li class="timeline-period">' + app.Variables.current_month_year + '</li>')

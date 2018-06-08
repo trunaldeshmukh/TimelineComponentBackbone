@@ -2,8 +2,8 @@
 $(function(){
     app.Models.AuditModel = Backbone.Model.extend({
         defaults: {
-            audit_id: 0, audit_event: "service enabled", audit_date: new Date().toDateString(), audit_description: "audit comment",audit_user:"audit user",
-            timeline_dot_color:"#3f51b5", timeline_icon_class:"",timeline_class:"",
+            audit_id: 0, audit_event: "service enabled", audit_date: new Date(), audit_description: "audit comment",audit_user:"audit user",
+            timeline_dot_color:"#3f51b5", timeline_icon_class:"",timeline_class:"",audit_short_date:"",audit_long_date:""
         },
         initialize: function(item){
             this.setTimelineClass();

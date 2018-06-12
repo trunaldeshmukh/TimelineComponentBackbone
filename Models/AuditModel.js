@@ -6,7 +6,7 @@ $(function(){
             timeline_dot_color:"#3f51b5", timeline_icon_class:"",timeline_class:"",audit_short_date:"",audit_long_date:""
         },
         initialize: function(item){
-            this.setTimelineClass();
+           // this.setTimelineClass();  //Not required : class is set in AuditCollectionView
         },
         setTimelineClass:function(){
             var current_timeline_class="";

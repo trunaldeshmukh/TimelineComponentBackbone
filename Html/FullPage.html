@@ -101,7 +101,7 @@
             <div class="timeline-info" style="margin-bottom:10px;">
                 <time datetime="DD MMM YYYY hh:mm A"> <%= audit_long_date %></time>
             </div>
-             <div class="timeline-content"> 
+             <div class="timeline-content" style="display: flex; justify-content: <%= timeline_class == 'timeline-reverse' ?  'flex-start' : 'flex-end' %>;"> 
                 <div class="widget widget-article ">
                     <div class="widget-body" style="padding:0px;">
                             <div class="testimonial testimonial-top <%= timeline_class == 'timeline-reverse' ?  '' : 'testimonial-reverse' %>">
@@ -114,9 +114,6 @@
                                 
                                 <div class="testimonial-content">
                                     <p><%= audit_description %></p>
-                                    <p>Nam nec ante. Sed lacinia, urna non tincidunt mattis,
-                                    tortor neque adipiscing diam, a cursus ipsum ante quis
-                                    turpis. </p>
                                 </div>
                                 </li>
                             </ul>
